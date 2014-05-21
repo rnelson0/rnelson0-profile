@@ -1,0 +1,17 @@
+{
+  "name": "rnelson0-profile",
+  "version": "0.1.0",
+  "author": "rnelson0",
+  "summary": "Profile module for roles and profiles",
+  "license": "Apache 2.0",
+  "source": "https://github.com/rnelson0/rnelson0-profile",
+  "project_page": "https://github.com/rnelson0/rnelson0-profile",
+  "issues_url": "https://github.com/rnelson0/rnelson0-profile/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    }
+  ]
+}
+
