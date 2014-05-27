@@ -23,5 +23,5 @@
 # Copyright 2014 Rob Nelson
 #
 class profile::apache {
-  class {'apache': }
+  class {'::apache': }
 }
