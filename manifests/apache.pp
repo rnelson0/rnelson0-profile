@@ -23,5 +23,5 @@
 # Copyright 2014 Rob Nelson
 #
 class profile::apache {
-  include profile::base
+  include apache
 }
