@@ -23,8 +23,9 @@
 # Copyright 2014 Rob Nelson
 #
 class profile::puppet_master {
-  package {'puppet-server':
-    ensure => present,
+  class { '::puppet::master':
+    storeconfigs => true,
+    environments => 'directory',
   }
 
   firewall { '100 allow agent checkins':
