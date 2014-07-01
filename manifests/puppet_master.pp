@@ -23,6 +23,7 @@
 # Copyright 2014 Rob Nelson
 #
 class profile::puppet_master {
+  include epel
   class { '::puppet::master':
     storeconfigs => true,
     environments => 'directory',
