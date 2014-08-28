@@ -24,4 +24,10 @@
 #
 class profile::apache {
   class {'::apache': }
+
+  firewall { '100 HTTP inbound':
+    dport  => 80,
+    proto  => tcp,
+    action => accept,
+  }
 }

@@ -53,4 +53,11 @@ class profile::base {
   class { '::ntp':
     servers => [ '0.pool.ntp.org', '2.centos.pool.ntp.org', '1.rhel.pool.ntp.org'],
   }
+
+  yumrepo {'el-6.5':
+    descr    => 'rnelson0 El 6.5 - x86_64',
+    baseurl  => 'http://yum.nelson.va/el-6.5/',
+    enabled  => 'true',
+    gpgcheck => 'false',
+  }
 }

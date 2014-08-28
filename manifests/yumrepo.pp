@@ -23,9 +23,9 @@
 # Copyright 2014 Rob Nelson
 #
 class profile::yumrepo {
-  class {'::apache': }
-  
-  apache::vhost {'puppetrepo':
+  class {'::profile::apache': }
+
+  apache::vhost {'yum.nelson.va':
     docroot    => '/var/www/html/puppetrepo',
-  } 
+  }
 }
