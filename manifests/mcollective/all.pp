@@ -1,6 +1,6 @@
 # == Class: profile::mcollective::all
 #
-# Role for a node providing all mcollective functions, middleware, client, server
+# Profile for a node providing all mcollective functions, middleware, client, server
 #
 # === Parameters
 #
@@ -35,7 +35,8 @@ class profile::mcollective::all {
     ssl_server_private => 'puppet:///modules/site_mcollective/private_keys/puppet.nelson.va.pem',
   }
 
-  mcollective::plugin { 'puppet':
+  $plugins = [ 'service', 'package', 'puppet']
+  mcollective::plugin { $plugins:
     package => true,
   }
 }
