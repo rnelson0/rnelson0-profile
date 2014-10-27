@@ -29,6 +29,11 @@ class profile::puppet_master {
     environments => 'directory',
   }
 
+  package { 'r10k':
+    ensure   => '1.3.4',
+    provider => gem
+  }
+
   firewall { '100 allow agent checkins':
     dport  => 8140,
     proto  => tcp,
