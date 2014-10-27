@@ -1,6 +1,6 @@
 # == Class: profile::mcollective::middleware
 #
-# Role for an mcollective middleware node.
+# Profile for an mcollective middleware node.
 # Middleware nodes communicate between the mco client and the managed servers.
 #
 # === Parameters

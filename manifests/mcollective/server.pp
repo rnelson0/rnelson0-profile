@@ -1,6 +1,6 @@
 # == Class: profile::mcollective::server
 #
-# Role for an mcollective server node.
+# Profile for an mcollective server node.
 # Server in this case indicates a node that is managed by mcollective.
 #
 # === Parameters
