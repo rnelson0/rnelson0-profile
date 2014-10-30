@@ -37,6 +37,8 @@ class profile::base {
       'AcceptEnv'                => 'LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT LC_IDENTIFICATION LC_ALL LANGUAGE XMODIFIERS',
       'Subsystem'                => '      sftp    /usr/libexec/openssh/sftp-server',
       'Banner'                   => '/etc/issue.net',
+      'RhostsRSAAuthentication'  => 'yes',
+      'HostbasedAuthentication'  => 'yes',
     },
   }
   class { '::ssh::client':
@@ -46,6 +48,8 @@ class profile::base {
         'HashKnownHosts'            => 'yes',
         'GSSAPIAuthentication'      => 'yes',
         'GSSAPIDelegateCredentials' => 'no',
+        'HostbasedAuthentication'   => 'yes',
+        'EnableSSHKeysign'          => 'yes',
       },
     },
   }
@@ -59,5 +63,10 @@ class profile::base {
     baseurl  => 'http://yum.nelson.va/el-6.5/',
     enabled  => 'true',
     gpgcheck => 'false',
+  }
+
+  exec {'shosts.equiv':
+    command => '/bin/cat /etc/ssh/ssh_known_hosts | grep -v "^#" | awk \'{print $1}\' | sed -e \'s/,/\n/g\' > /etc/ssh/shosts.equiv',
+    require => Class['ssh::knownhosts'],
   }
 }
