@@ -31,4 +31,8 @@ class profile::build {
     provider => gem,
     require  => Package['ruby-devel'],
   }
+  package {'rspec-puppet':
+    ensure   => present,
+    provider => gem,
+  }
 }
