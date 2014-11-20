@@ -9,7 +9,6 @@ class profile::rvm {
 
   $rvm_gems = ['rspec-puppet', 'puppet', 'fpm', 'puppet-lint']
   rvm_gem { $rvm_gems:
-    name         => $title,
     ruby_version => $ruby_version,
     ensure       => latest,
     require      => Rvm_system_ruby[$ruby_version],
