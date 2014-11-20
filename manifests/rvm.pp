@@ -1,7 +1,7 @@
 class profile::rvm {
   include '::rvm'
 
-  $ruby_version = 'ruby-1.9.3-p488'
+  $ruby_version = 'ruby-1.9.3-p551'
   rvm_system_ruby { $ruby_version:
     ensure      => present,
     default_use => true,
