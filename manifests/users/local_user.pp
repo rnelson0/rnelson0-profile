@@ -32,7 +32,7 @@ define profile::users::local_user ( $state, $id, $comment, $groups, $password) {
     user { $id:
             ensure           => $state,
             shell            => '/bin/bash',
-            home             => "/home/$id",
+            home             => "/home/${id}",
             comment          => $comment,
             managehome       => true,
             groups           => $groups,
@@ -40,13 +40,14 @@ define profile::users::local_user ( $state, $id, $comment, $groups, $password) {
     }
 
     case $::osfamily {
-            RedHat: {$action = "/bin/sed -i -e 's/$id:!!:/$id:$password:/g' /etc/shadow; chage -d 0 $id"}
-            Debian: {$action = "/bin/sed -i -e 's/$id:x:/$id:$password:/g' /etc/shadow; chage -d 0 $id"}
+            RedHat: {$action = "/bin/sed -i -e 's/${id}:!!:/${id}:${password}:/g' /etc/shadow; chage -d 0 ${id}"}
+            Debian: {$action = "/bin/sed -i -e 's/${id}:x:/${id}:${password}:/g' /etc/shadow; chage -d 0 ${id}"}
+            default: { }
     }
 
-    exec { "$action":
+    exec { $action:
             path    => '/usr/bin:/usr/sbin:/bin',
-            onlyif  => "egrep -q  -e '$id:!!:' -e '$id:x:' /etc/shadow",
+            onlyif  => "egrep -q  -e '${id}:!!:' -e '${id}:x:' /etc/shadow",
             require => User[$id]
     }
 }

@@ -1,3 +1,4 @@
+# RVM settings
 class profile::rvm {
   include '::rvm'
 
@@ -15,8 +16,8 @@ class profile::rvm {
     'puppetlabs_spec_helper',
   ]
   rvm_gem { $rvm_gems:
-    ruby_version => $ruby_version,
     ensure       => latest,
+    ruby_version => $ruby_version,
     require      => Rvm_system_ruby[$ruby_version],
   }
 }
