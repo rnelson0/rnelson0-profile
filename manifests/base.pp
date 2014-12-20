@@ -23,8 +23,6 @@
 # Copyright 2014 Rob Nelson
 #
 class profile::base {
-  include ::motd
-
   # SSH server and client
   class { '::ssh::server':
     options => {
