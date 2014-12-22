@@ -56,15 +56,28 @@ class profile::base {
     servers => [ '0.pool.ntp.org', '2.centos.pool.ntp.org', '1.rhel.pool.ntp.org'],
   }
 
+  # Yum repository
   yumrepo {'el-6.5':
     descr    => 'rnelson0 El 6.5 - x86_64',
     baseurl  => 'http://yum.nelson.va/el-6.5/',
     enabled  => true,
     gpgcheck => false,
   }
+  Yumrepo<| |> -> Package<| |>
 
+  # Set up shosts.equiv for automated logins from known hosts
   exec {'shosts.equiv':
     command => '/bin/cat /etc/ssh/ssh_known_hosts | grep -v "^#" | awk \'{print $1}\' | sed -e \'s/,/\n/g\' > /etc/ssh/shosts.equiv',
     require => Class['ssh::knownhosts'],
   }
+
+  # Local user setup
+  include '::sudo'
+  ::sudo::conf { 'wheel':
+    priority => 10,
+    content  => '%wheel     ALL=(ALL)       ALL',
+  }
+
+  $local_users = hiera('local_users', undef)
+  create_resources('::profile::users::local_user', $local_users)
 }
