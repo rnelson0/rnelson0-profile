@@ -48,12 +48,12 @@ class profile::sshgw {
 
   # DHCP service and host reservations
   include dhcp::server
-  $dhcp_server_subnets = hiera_hash('dhcp_server_subnets', undef)
+  $dhcp_server_subnets = hiera_hash('sshgw::dhcp_server_subnets', undef)
   if ($dhcp_server_subnets) {
     create_resources('dhcp::server::subnet', $dhcp_server_subnets)
   }
 
-  $dhcp_server_hosts = hiera_hash('dhcp_server_hosts', undef)
+  $dhcp_server_hosts = hiera_hash('sshgw::dhcp_server_hosts', undef)
   if ($dhcp_server_hosts) {
     create_resources('dhcp::server::host', $dhcp_server_hosts)
   }
