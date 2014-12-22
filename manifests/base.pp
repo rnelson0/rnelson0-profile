@@ -48,8 +48,8 @@ class profile::base {
   yumrepo {'el-6.5':
     descr    => 'rnelson0 El 6.5 - x86_64',
     baseurl  => 'http://yum.nelson.va/el-6.5/',
-    enabled  => true,
-    gpgcheck => false,
+    enabled  => 1,
+    gpgcheck => 0,
   }
   Yumrepo<| |> -> Package<| |>
 
