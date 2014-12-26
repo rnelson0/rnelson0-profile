@@ -2,18 +2,6 @@
 #
 # Create a yum-compatible repo
 #
-# === Parameters
-#
-# None
-#
-# === Variables
-#
-# None
-#
-# === Examples
-#
-#  include profile::yumrepo
-#
 # === Authors
 #
 # Rob Nelson <rnelson0@gmail.com>

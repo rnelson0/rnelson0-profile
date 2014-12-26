@@ -3,18 +3,6 @@
 # Profile for an mcollective middleware node.
 # Middleware nodes communicate between the mco client and the managed servers.
 #
-# === Parameters
-#
-# None
-#
-# === Variables
-#
-# None
-#
-# === Examples
-#
-# include profile::mcollective::middleware
-#
 # === Authors
 #
 # Rob Nelson <rnelson0@gmail.com>

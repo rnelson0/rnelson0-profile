@@ -2,18 +2,6 @@
 #
 # Define common users for mcollective and populate their certs
 #
-# === Parameters
-#
-# None
-#
-# === Variables
-#
-# None
-#
-# === Examples
-#
-# include profile::mcollective::users
-#
 # === Authors
 #
 # Rob Nelson <rnelson0@gmail.com>

@@ -2,18 +2,6 @@
 #
 # Profile for users in the build group
 #
-# === Parameters
-#
-# None
-#
-# === Variables
-#
-# None
-#
-# === Examples
-#
-#  include ::profile::users::build
-#
 # === Authors
 #
 # Rob Nelson <rnelson0@gmail.com>

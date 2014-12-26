@@ -1,4 +1,15 @@
-# RVM settings
+# == Class: profile::rvm
+#
+# RVM gem and version settings
+#
+# === Authors
+#
+# Rob Nelson <rnelson0@gmail.com>
+#
+# === Copyright
+#
+# Copyright 2014 Rob Nelson
+#
 class profile::rvm {
   include '::rvm'
 

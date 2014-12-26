@@ -2,18 +2,6 @@
 #
 # Apache profile
 #
-# === Parameters
-#
-# None
-#
-# === Variables
-#
-# None
-#
-# === Examples
-#
-#  include profile::apache
-#
 # === Authors
 #
 # Rob Nelson <rnelson0@gmail.com>

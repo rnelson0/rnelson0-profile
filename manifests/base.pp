@@ -2,18 +2,6 @@
 #
 # Base profile
 #
-# === Parameters
-#
-# None
-#
-# === Variables
-#
-# None
-#
-# === Examples
-#
-#  include profile::base
-#
 # === Authors
 #
 # Rob Nelson <rnelson0@gmail.com>

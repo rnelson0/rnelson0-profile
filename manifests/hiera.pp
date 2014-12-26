@@ -2,18 +2,6 @@
 #
 # Hiera profile
 #
-# === Parameters
-#
-# None
-#
-# === Variables
-#
-# None
-#
-# === Examples
-#
-#  include profile::hiera
-#
 # === Authors
 #
 # Rob Nelson <rnelson0@gmail.com>

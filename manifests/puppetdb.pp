@@ -2,18 +2,6 @@
 #
 # PuppetDB profile
 #
-# === Parameters
-#
-# None
-#
-# === Variables
-#
-# None
-#
-# === Examples
-#
-#  include profile::puppetdb
-#
 # === Authors
 #
 # Rob Nelson <rnelson0@gmail.com>
