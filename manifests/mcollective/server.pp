@@ -3,18 +3,6 @@
 # Profile for an mcollective server node.
 # Server in this case indicates a node that is managed by mcollective.
 #
-# === Parameters
-#
-# None
-#
-# === Variables
-#
-# None
-#
-# === Examples
-#
-# include profile::mcollective::server
-#
 # === Authors
 #
 # Rob Nelson <rnelson0@gmail.com>

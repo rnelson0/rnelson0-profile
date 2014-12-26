@@ -2,18 +2,6 @@
 #
 # The helloworld application profile
 #
-# === Parameters
-#
-# None
-#
-# === Variables
-#
-# None
-#
-# === Examples
-#
-#  include profile::helloworld
-#
 # === Authors
 #
 # Rob Nelson <rnelson0@gmail.com>

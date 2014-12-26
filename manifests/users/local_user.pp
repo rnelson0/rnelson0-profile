@@ -2,14 +2,6 @@
 #
 # Definition for a local user
 #
-# === Parameters
-#
-# None
-#
-# === Variables
-#
-# None
-#
 # === Examples
 #
 #  ::profile::users::local_user { 'username':

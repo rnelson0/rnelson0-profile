@@ -2,18 +2,6 @@
 #
 # Puppet Master profile
 #
-# === Parameters
-#
-# None
-#
-# === Variables
-#
-# None
-#
-# === Examples
-#
-#  include profile::puppet_master
-#
 # === Authors
 #
 # Rob Nelson <rnelson0@gmail.com>

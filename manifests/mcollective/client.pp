@@ -4,18 +4,6 @@
 # Client in context indicates a node where 'mco' can be run.
 # It must be able to communicate with the middleware_host.
 #
-# === Parameters
-#
-# None
-#
-# === Variables
-#
-# None
-#
-# === Examples
-#
-# include profile::mcollective::client
-#
 # === Authors
 #
 # Rob Nelson <rnelson0@gmail.com>

@@ -2,18 +2,6 @@
 #
 # Profile for a node providing all mcollective functions, middleware, client, server
 #
-# === Parameters
-#
-# None
-#
-# === Variables
-#
-# None
-#
-# === Examples
-#
-# include profile::mcollective::all
-#
 # === Authors
 #
 # Rob Nelson <rnelson0@gmail.com>
