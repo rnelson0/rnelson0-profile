@@ -1,0 +1,28 @@
+---
+bind_server_confs:
+  '/etc/named.conf':
+    listen_on_addr:
+      - '127.0.0.1'
+    allow_query:
+      - 'localhost'
+bind_server_files:
+  'named.test':
+    source: 'name.test'
+sshvpn_hosts:
+  sample:
+    ensure  : 'present'
+    comment : 'Sample host'
+    ip      : '127.0.0.255'
+dhcp_server_subnets:
+  '10.0.0.0':
+    broadcast   : '10.0.0.255'
+    netmask     : '255.255.255.0'
+    routers     : '10.0.0.1'
+    range_begin : '10.0.0.100'
+    range_end   : '10.0.0.150'
+    dns_servers :
+      - '10.0.0.1'
+dhcp_server_hosts:
+  sample:
+    address:   10.0.0.254
+    hwaddress: 00:00:00:00:00:0a
