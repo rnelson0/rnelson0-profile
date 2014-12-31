@@ -34,27 +34,4 @@ class profile::sshgw {
   package { 'sshvpn':
     ensure => latest,
   }
-
-  # Named package and configs
-  include bind
-  $bind_server_confs = hiera_hash('sshgw::bind_server_confs', undef)
-  if ($bind_server_confs) {
-    create_resources('bind::server::conf', $bind_server_confs)
-  }
-  $bind_server_files = hiera_hash('sshgw::bind_server_files', undef)
-  if ($bind_server_files) {
-    create_resources('bind::server::file', $bind_server_files)
-  }
-
-  # DHCP service and host reservations
-  include dhcp::server
-  $dhcp_server_subnets = hiera_hash('sshgw::dhcp_server_subnets', undef)
-  if ($dhcp_server_subnets) {
-    create_resources('dhcp::server::subnet', $dhcp_server_subnets)
-  }
-
-  $dhcp_server_hosts = hiera_hash('sshgw::dhcp_server_hosts', undef)
-  if ($dhcp_server_hosts) {
-    create_resources('dhcp::server::host', $dhcp_server_hosts)
-  }
 }
