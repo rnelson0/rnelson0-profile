@@ -22,4 +22,11 @@ class profile::dhcp {
   if ($dhcp_server_hosts) {
     create_resources('dhcp::server::host', $dhcp_server_hosts)
   }
+
+  firewall { '100 dhcp requests':
+    sport  => [67, 68],
+    dport  => [67, 68],
+    proto  => udp,
+    action => accept,
+  }
 }

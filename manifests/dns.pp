@@ -21,4 +21,10 @@ class profile::dns {
   if ($bind_server_files) {
     create_resources('bind::server::file', $bind_server_files)
   }
+
+  firewall { '100 DNS lookups':
+    dport  => 53,
+    proto  => udp,
+    action => accept,
+  }
 }
