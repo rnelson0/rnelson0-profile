@@ -25,6 +25,7 @@ class profile::sshgw {
   file { '/root/.ssh/id_rsa':
     ensure => file,
     source => "puppet:///modules/home_config/${puppet_role}/id_rsa",
+    mode   => '0600',
   } ->
   file { '/root/.ssh/id-rsa.pub':
     ensure => file,
