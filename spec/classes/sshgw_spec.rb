@@ -5,5 +5,6 @@ describe 'profile::sshgw', :type => :class do
     it { is_expected.to contain_package('sshvpn') }
     it { is_expected.to contain_host('sample') }
     it { is_expected.to contain_file('/root/.ssh/id-rsa.pub') }
+    it { is_expected.to contain_file('/root/.ssh/config') }
   end
 end

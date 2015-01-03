@@ -30,8 +30,11 @@ class profile::sshgw {
   file { '/root/.ssh/id-rsa.pub':
     ensure => file,
     source => "puppet:///modules/home_config/${puppet_role}/id_rsa.pub",
-  }
-
+  } ->
+  file { '/root/.ssh/config':
+    ensure => file,
+    source => "puppet:///modules/home_config/${puppet_role}/ssh_config",
+  } ->
   package { 'sshvpn':
     ensure => latest,
   }
