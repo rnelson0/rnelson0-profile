@@ -11,6 +11,9 @@
 # Copyright 2014 Rob Nelson
 #
 class profile::base {
+  # Base firewall policy
+  include ::linuxfw
+
   # SSH server and client
   class { '::ssh::server':
     options => {
