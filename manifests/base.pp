@@ -67,5 +67,5 @@ class profile::base {
   }
 
   $local_users = hiera('local_users', undef)
-  create_resources('::profile::users::local_user', $local_users)
+  create_resources('local_user', $local_users)
 }
