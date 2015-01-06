@@ -8,7 +8,7 @@
 #
 # === Copyright
 #
-# Copyright 2014 Rob Nelson
+# Copyright 2015 Rob Nelson
 #
 class profile::sshgw {
   # Host file entries

@@ -8,7 +8,7 @@
 #
 # === Copyright
 #
-# Copyright 2014 Rob Nelson
+# Copyright 2015 Rob Nelson
 #
 class profile::puppet_master {
   include epel
@@ -18,7 +18,7 @@ class profile::puppet_master {
   }
 
   package { 'r10k':
-    ensure   => '1.3.4',
+    ensure   => '1.4.0',
     provider => gem
   }
 

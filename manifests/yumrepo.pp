@@ -8,12 +8,14 @@
 #
 # === Copyright
 #
-# Copyright 2014 Rob Nelson
+# Copyright 2015 Rob Nelson
 #
-class profile::yumrepo {
+class profile::yumrepo (
+  $vhost = 'yum.example.com',
+) {
   class {'::profile::apache': }
 
-  apache::vhost {'yum.nelson.va':
+  apache::vhost {$vhost:
     docroot    => '/var/www/html/puppetrepo',
   }
 }

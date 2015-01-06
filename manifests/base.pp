@@ -8,7 +8,7 @@
 #
 # === Copyright
 #
-# Copyright 2014 Rob Nelson
+# Copyright 2015 Rob Nelson
 #
 class profile::base {
   # Base firewall policy
@@ -48,9 +48,12 @@ class profile::base {
   }
 
   # Yum repository
-  yumrepo {'el-6.5':
-    descr    => 'rnelson0 El 6.5 - x86_64',
-    baseurl  => 'http://yum.nelson.va/el-6.5/',
+  $yumrepo_name = hiera('yumrepo_name')
+  $yumrepo_desc = hiera('yumrepo_desc')
+  $yumrepo_url  = hiera('yumrepo_url')
+  yumrepo {$yumrepo_name:
+    descr    => $yumrepo_desc,
+    baseurl  => $yumrepo_url,
     enabled  => 1,
     gpgcheck => 0,
   }
@@ -70,5 +73,7 @@ class profile::base {
   }
 
   $local_users = hiera('local_users', undef)
-  create_resources('local_user', $local_users)
+  if ($local_users) {
+    create_resources('local_user', $local_users)
+  }
 }
