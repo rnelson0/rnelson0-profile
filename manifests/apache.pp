@@ -13,8 +13,8 @@
 class profile::apache {
   include ::apache
 
-  firewall { '100 HTTP inbound':
-    dport  => 80,
+  firewall { '100 HTTP/S inbound':
+    dport  => [80, 443],
     proto  => tcp,
     action => accept,
   }
