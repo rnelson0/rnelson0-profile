@@ -13,11 +13,8 @@
 class profile::phpmyadmin (
   $cname            = 'phpmyadmin.nelson.va',
   $serveradmin      = 'rnelson0@gmail.com',
-  $server           = 'localhost',
-  $extension        = 'mysqli',   # Rarely overridden
-  $user             = 'root',
-  $pass             = undef,
   $docroot          = '/usr/share/phpMyAdmin',
+  $servers          = {},
 ) {
 
   # SELinux booleans
@@ -74,8 +71,6 @@ class profile::phpmyadmin (
     path    => '/etc/phpMyAdmin/config.inc.php',
     mode    => '0644',
     require => Package['phpMyAdmin'],
-    notify  => Service['httpd'],
     content => template('profile/phpmyadmin/config.inc.php.erb'),
   }
-
 }

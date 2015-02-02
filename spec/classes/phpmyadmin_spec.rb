@@ -15,7 +15,6 @@ describe 'profile::phpmyadmin', :type => :class do
   context 'with dbpass and cname' do
     let (:params) do
     {
-      :pass => 'test',
       :cname  => 'phpmyadmin.example.com',
     }
     end

@@ -49,3 +49,8 @@ mysql::server::backup::backupcompress    : 'true'
 mysql::server::backup::backuprotate      : 90
 mysql::server::backup::file_per_database : 'true'
 mysql::server::backup::time              : ['*', '00']
+profile::phpmyadmin::servers:
+  test:
+    host: '1.2.3.4'
+    user: 'phpMyAdmin'
+    pass: 'password'
