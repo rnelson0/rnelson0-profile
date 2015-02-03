@@ -1,6 +1,6 @@
 # == Class: profile::mysql::client
 #
-# Apache profile
+# MySQL client application
 #
 # === Authors
 #

@@ -1,6 +1,6 @@
 # == Class: profile::build
 #
-# build profile
+# Build server, for central software development
 #
 # === Authors
 #

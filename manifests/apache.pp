@@ -1,6 +1,6 @@
 # == Class: profile::apache
 #
-# Apache profile
+# Apache webserver
 #
 # === Authors
 #

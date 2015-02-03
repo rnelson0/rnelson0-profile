@@ -1,6 +1,6 @@
 # == Class: profile::hiera
 #
-# Hiera profile
+# Hiera
 #
 # === Authors
 #

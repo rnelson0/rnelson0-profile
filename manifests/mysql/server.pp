@@ -1,6 +1,6 @@
 # == Class: profile::mysql::server
 #
-# MySQL profile
+# MySQL server
 #
 # === Authors
 #

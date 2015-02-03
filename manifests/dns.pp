@@ -1,6 +1,6 @@
 # == Class: profile::dns
 #
-# SSH VPN Tunnel
+# DNS service
 #
 # === Authors
 #

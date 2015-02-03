@@ -1,6 +1,6 @@
 # == Class: profile::puppet_master
 #
-# Puppet Master profile
+# Puppet Master
 #
 # === Authors
 #

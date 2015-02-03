@@ -1,6 +1,6 @@
 # == Class: profile::phpmyadmin
 #
-# phpMyAdmin profile
+# phpMyAdmin service
 #
 # === Authors
 #

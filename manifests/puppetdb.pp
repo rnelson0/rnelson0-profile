@@ -1,6 +1,6 @@
 # == Class: profile::puppetdb
 #
-# PuppetDB profile
+# PuppetDB service
 #
 # === Authors
 #

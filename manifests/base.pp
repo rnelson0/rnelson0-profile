@@ -1,6 +1,6 @@
 # == Class: profile::base
 #
-# Base profile
+# Base, applied to all nodes
 #
 # === Authors
 #
