@@ -19,15 +19,28 @@ class profile::rvm {
     default_use => true,
   }
 
-  $rvm_gems = [
-    'rspec-puppet',
-    'puppet',
-    'fpm',
-    'puppet-lint',
-    'puppetlabs_spec_helper',
-  ]
-  rvm_gem { $rvm_gems:
-    ensure       => latest,
+  rvm_gem {'rspec-puppet':
+    ensure       => '2.0.0',
+    ruby_version => $ruby_version,
+    require      => Rvm_system_ruby[$ruby_version],
+  }
+  rvm_gem {'puppet':
+    ensure       => '3.7.3',
+    ruby_version => $ruby_version,
+    require      => Rvm_system_ruby[$ruby_version],
+  }
+  rvm_gem {'fpm':
+    ensure       => '1.3.3',
+    ruby_version => $ruby_version,
+    require      => Rvm_system_ruby[$ruby_version],
+  }
+  rvm_gem {'puppet-lint':
+    ensure       => '1.1.0',
+    ruby_version => $ruby_version,
+    require      => Rvm_system_ruby[$ruby_version],
+  }
+  rvm_gem {'puppetlabs_spec_helper':
+    ensure       => '0.8.2',
     ruby_version => $ruby_version,
     require      => Rvm_system_ruby[$ruby_version],
   }
