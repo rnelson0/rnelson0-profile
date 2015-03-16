@@ -10,7 +10,9 @@
 #
 # Copyright 2015 Rob Nelson
 #
-class profile::sshgw {
+class profile::sshgw (
+  $sshvpnversion = $profile::params::sshvpnversion,
+) inherits profile::params {
   # Host file entries
   $sshvpn_hosts = hiera_hash('sshvpn_hosts', undef)
   if ($sshvpn_hosts) {
@@ -19,31 +21,31 @@ class profile::sshgw {
 
   # SSH directory and keys
   file { '/root/.ssh':
-    ensure   => 'directory',
-    mode     => '0700',
-  } -> 
+    ensure => 'directory',
+    mode   => '0700',
+  } ->
   file { '/root/.ssh/id_rsa':
     ensure => file,
-    source => "puppet:///modules/home_config/${puppet_role}/id_rsa",
+    source => "puppet:///modules/home_config/${::puppet_role}/id_rsa",
     mode   => '0600',
   } ->
   file { '/root/.ssh/id-rsa.pub':
     ensure => file,
-    source => "puppet:///modules/home_config/${puppet_role}/id_rsa.pub",
+    source => "puppet:///modules/home_config/${::puppet_role}/id_rsa.pub",
   } ->
   file { '/root/.ssh/config':
     ensure => file,
-    source => "puppet:///modules/home_config/${puppet_role}/ssh_config",
+    source => "puppet:///modules/home_config/${::puppet_role}/ssh_config",
   } ->
   package { 'sshvpn':
-    ensure => latest,
+    ensure => $sshvpnversion,
   }
 
   # Firewall rules
   firewall { '100 eth0 accept':
-    iniface  => 'eth0',
-    proto    => 'all',
-    action   => 'accept',
+    iniface => 'eth0',
+    proto   => 'all',
+    action  => 'accept',
   }
   firewall { '110 forward tun0 established':
     chain    => 'FORWARD',
