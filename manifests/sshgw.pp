@@ -41,6 +41,10 @@ class profile::sshgw (
     ensure => $sshvpnversion,
   }
 
+  package { 'tcpdump':
+    ensure => present,
+  }
+
   # Firewall rules
   firewall { '100 eth0 accept':
     iniface => 'eth0',
